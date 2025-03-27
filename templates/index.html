@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Expression Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MathCalc</div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Math Expression Calculator</h1>
+
+        <form method="post" enctype="multipart/form-data" class="upload-form">
+            <div class="file-input-wrapper">
+                <input type="file" name="file" accept="image/*" id="fileInput" required>
+                <label for="fileInput">Choose Image</label>
+            </div>
+            <button type="submit" class="submit-btn">
+                <span>Calculate</span>
+                <svg class="arrow" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </form>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% if result %}
+            <div class="result-card">
+                {% if result.error %}
+                    <h3 class="error-title">Error</h3>
+                    <p class="error-message">{{ result.error }}</p>
+                {% else %}
+                    <h3>Result</h3>
+                    <div class="result-content">
+                        <p><span class="label">Extracted Expression:</span> {{ result.expression }}</p>
+                        <p><span class="label">Result:</span> <span class="result-value">{{ result.solution }}</span></p>
+                    </div>
+                {% endif %}
+                <h3>Uploaded Image</h3>
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename=result.image_path) }}" alt="Uploaded Image">
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

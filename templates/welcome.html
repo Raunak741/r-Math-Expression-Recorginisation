@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Math Expression Recognizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="welcome-container">
+        <h1 class="welcome-title">Welcome to Math Expression Recognizer</h1>
+        <p>Upload an image containing a math expression, and we will recognize and solve it for you.</p>
+        <a href="{{ url_for('index') }}">
+            <button class="start-btn">Let's Begin</button>
+        </a>
+    </div>
+    <footer>
+        <p>Made By: <br>
+            1.Utkarsh Sharma<br>
+            2.Raunak Khandelwal<br>
+            3.Suyash Sinha
+        </p>
+    </footer>
+</body>
+</html>

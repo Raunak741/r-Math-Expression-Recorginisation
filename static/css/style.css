@@ -1,0 +1,196 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center; /* Align everything to center */
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: burlywood;
+    color: black;
+    min-height: 100vh;
+    padding: 40px 20px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+/* Page Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Welcome Page Styles */
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.welcome-title {
+    font-size: 46px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.start-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #2ecc71;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: 600;
+}
+
+.start-btn:hover {
+    background-color: #27ae60;
+    transform: scale(1.1);
+}
+
+/* Header Styles */
+header {
+    margin-bottom: 30px;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 54px;
+    font-weight: 600;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Container Styles */
+.container {
+    max-width: 900px;
+    width: 80%;
+    margin: 100px auto; /* Increased margin from all sides */
+    background: linear-gradient(135deg, #FFD700, #FFA500); /* Gradient background for a vibrant look */
+    padding: 60px; /* Slightly increased padding */
+    border-radius: 20px; /* More rounded corners for a smoother look */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow for a lifted effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: scaleUp 0.5s ease-in-out;
+    min-height: 500px; /* Increased height for better spacing */
+}
+
+/* Scale-up animation */
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Hover effect for main container */
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Styles */
+.upload-form {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+/* File input */
+.file-input-wrapper label {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: brown;
+    color: black;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-input-wrapper label:hover {
+    background-color: #555;
+}
+
+/* Button with Animation */
+.submit-btn {
+    padding: 12px 25px;
+    background-color: #2ecc71;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease-in-out;
+    font-weight: 600;
+    transform: scale(1);
+}
+
+/* Button Hover Effect */
+.submit-btn:hover {
+    background-color: #27ae60;
+    transform: scale(1.1);
+}
+
+/* Flash Messages */
+.flash {
+    padding: 15px;
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    margin: 15px 0;
+    color: black;
+}
+
+/* Result Card */
+.result-card {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 12px;
+    background: grey;
+    width: 85%;
+    max-width: 750px;
+    margin: auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: fadeIn 1s ease-in-out;
+    color: black;
+}
+
+/* Hover effect for Result Box */
+.result-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: black;
+    font-size: 0.9em;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
